@@ -35,7 +35,7 @@ const SearcherContext = ({ children }: { children: ReactNode }) => {
     setTotal(total);
     setPage((prevPage) => prevPage + 1);
     setResults((prevResults) => [...prevResults, ...items]);
-  }
+  };
 
 
   const setNewResults = (total: number, items: GithubAPIResultsType[]) => {
@@ -43,7 +43,7 @@ const SearcherContext = ({ children }: { children: ReactNode }) => {
     setResults(items);
     setPage(1);
     setDisplayedResultType(searchType);
-  }
+  };
 
   const contextValue: ISearcherState = {
     page,
