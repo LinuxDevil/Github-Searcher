@@ -34,6 +34,13 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# IDEs and editors
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+
 # User-specific stuff
 .idea/**/workspace.xml
 .idea/**/tasks.xml
@@ -56,3 +63,4 @@ next-env.d.ts
 .idea/**/uiDesigner.xml
 .idea/**/dbnavigator.xml
 
+.env

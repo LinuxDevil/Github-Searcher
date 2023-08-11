@@ -1,4 +1,11 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# GitHub Searcher
+A GitHub Searcher built with Next.js, TS, Tailwind CSS, and GitHub API.
+
+## Mind Map
+You can view the mind map of this project here: [GitHub Searcher](https://coggle.it/diagram/ZNXjqVpO0W45ZHzU/t/-/fe57e44e42b79ac6325e694fa2eb2d7bffeda33d024855d8ddfa6c1bd08a7168)
+
+## Figma Design
+You can view the design of this project here: [GitHub Searcher](https://www.figma.com/file/oYyDxP0tCV5z9oyUBTf3ma/Untitled?type=design&node-id=2%3A4116&mode=design&t=ZNyYT65HqdTLavxz-1)
 
 ## Getting Started
 
