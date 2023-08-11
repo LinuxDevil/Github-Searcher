@@ -1,0 +1,11 @@
+
+.home {
+  &__container {
+    @apply tw-flex tw-flex-col tw-justify-center tw-items-center tw-w-full tw-pt-40;
+  }
+
+  &__welcome {
+    @apply tw-text-xl;
+  }
+
+}
