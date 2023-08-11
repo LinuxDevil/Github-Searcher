@@ -14,8 +14,6 @@ jobs:
         with:
           node-version: "18"
       - name: Install dependencies
+        run: yarn install
+      - name: Jest tests & lint
         run: yarn ci
-      - name: Jest tests
-        run: yarn test
-      - name: Lint
-        run: yarn lint
