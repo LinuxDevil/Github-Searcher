@@ -1,5 +1,14 @@
-# GitHub Searcher
+# GitHub Searcher ![github-searcher-actions-status](https://github.com/LinuxDevil/Github-Searcher/actions/workflows/github-actions-ci.yml/badge.svg)
+
 A GitHub Searcher built with Next.js, TS, Tailwind CSS, and GitHub API.
+
+![nextjs](https://img.shields.io/badge/next%20js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
+)![react](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)![typescript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white
+)![tailwind](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white
+)![jest](https://img.shields.io/badge/Jest-323330?style=for-the-badge&logo=Jest&logoColor=white
+)![docker](https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white
+)![github-actions](https://img.shields.io/badge/Github%20Actions-282a2e?style=for-the-badge&logo=githubactions&logoColor=367cfe
+)
 
 ## Mind Map
 You can view the mind map of this project here: [GitHub Searcher](https://coggle.it/diagram/ZNXjqVpO0W45ZHzU/t/-/fe57e44e42b79ac6325e694fa2eb2d7bffeda33d024855d8ddfa6c1bd08a7168)
