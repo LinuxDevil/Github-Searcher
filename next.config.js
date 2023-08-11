@@ -8,7 +8,7 @@ const nextConfig = {
         API_TOKEN: process.env.API_TOKEN,
     },
     images: {
-        domains: []
+        domains: ['avatars.githubusercontent.com']
     }
 }
 
