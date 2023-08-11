@@ -1,9 +1,9 @@
-import { GithubAPISearchType, GithubRepository, GithubUser } from "@/models/github-api";
+import { GithubAPISearchType, IGithubRepository, IGithubUser } from "@/models/github-api";
 import { createContext, Dispatch, ReactNode, SetStateAction, useCallback, useState } from "react";
 
 const PAGE_SIZE: number = 10;
 
-export type GithubAPIResultsType = GithubUser | GithubRepository;
+export type GithubAPIResultsType = IGithubUser | IGithubRepository;
 
 interface ISearcherState {
   query: string;
@@ -13,8 +13,10 @@ interface ISearcherState {
   searchType: GithubAPISearchType;
   displayedResultType: GithubAPISearchType;
   results: GithubAPIResultsType[];
+  isLoading: boolean;
   setQuery: Dispatch<SetStateAction<string>>;
   setSearchType: Dispatch<SetStateAction<GithubAPISearchType>>;
+  setIsLoading: Dispatch<SetStateAction<boolean>>;
   setDisplayedResultType: Dispatch<SetStateAction<GithubAPISearchType>>;
   setNewResults: (total: number, items: GithubAPIResultsType[]) => void;
   addNewResults: (total: number, items: GithubAPIResultsType[]) => void;
@@ -30,8 +32,9 @@ const SearcherContext = ({ children }: { children: ReactNode }) => {
   const [searchType, setSearchType] = useState<GithubAPISearchType>("users");
   const [displayedResultType, setDisplayedResultType] = useState<GithubAPISearchType>("users");
   const [results, setResults] = useState<GithubAPIResultsType[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  const addNewResults = (total: number, items: GithubAPIResultsType[]) => {
+  const addNewResults = (total: number, items: GithubAPIResultsType[] = []) => {
     setTotal(total);
     setPage((prevPage) => prevPage + 1);
     setResults((prevResults) => [...prevResults, ...items]);
@@ -53,10 +56,12 @@ const SearcherContext = ({ children }: { children: ReactNode }) => {
     searchType,
     displayedResultType,
     results,
+    isLoading,
     setQuery,
     setSearchType,
     setDisplayedResultType,
     setNewResults,
+    setIsLoading,
     addNewResults
   };
 
