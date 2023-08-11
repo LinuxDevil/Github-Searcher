@@ -11,7 +11,7 @@ import {
 } from "@/models/github-api";
 import { SearcherContextData } from "@/state/searcher.context";
 import useSWRMutation from "swr/mutation";
-import { useDebounce } from "@/hooks/useDebouce";
+import { useDebounce } from "@/hooks/useDebounce";
 
 export default function GithubSearch() {
 
