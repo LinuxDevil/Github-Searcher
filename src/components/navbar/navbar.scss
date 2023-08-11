@@ -1,0 +1,15 @@
+.navbar {
+  @apply tw-shadow tw-p-3;
+
+  &__container, &__tabs {
+    @apply tw-flex tw-justify-start tw-gap-4;
+  }
+
+  &__tab {
+    @apply tw-flex tw-flex-row tw-items-center tw-gap-2 tw-text-gray-500 tw-text-sm tw-font-medium tw-cursor-pointer;
+    &--active {
+      @apply tw-text-black tw-font-bold;
+    }
+  }
+
+}
