@@ -5,5 +5,6 @@ const createJestConfig = nextJest({
 const customJestConfig = {
     moduleDirectories: ['node_modules', '<rootDir>/src'],
     testEnvironment: 'jest-environment-jsdom',
+    coverageReporters: ["json-summary"]
 };
 module.exports = createJestConfig(customJestConfig);

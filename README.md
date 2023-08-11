@@ -8,7 +8,12 @@ A GitHub Searcher built with Next.js, TS, Tailwind CSS, and GitHub API.
 )![jest](https://img.shields.io/badge/Jest-323330?style=for-the-badge&logo=Jest&logoColor=white
 )![docker](https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white
 )![github-actions](https://img.shields.io/badge/Github%20Actions-282a2e?style=for-the-badge&logo=githubactions&logoColor=367cfe
-)
+)![Branches](./badges/coverage-branches.svg)
+![Functions](./badges/coverage-functions.svg)
+![Lines](./badges/coverage-lines.svg)
+![Statements](./badges/coverage-statements.svg)
+![Jest coverage](./badges/coverage-jest%20coverage.svg)
+
 
 ## Mind Map
 You can view the mind map of this project here: [GitHub Searcher](https://coggle.it/diagram/ZNXjqVpO0W45ZHzU/t/-/fe57e44e42b79ac6325e694fa2eb2d7bffeda33d024855d8ddfa6c1bd08a7168)
