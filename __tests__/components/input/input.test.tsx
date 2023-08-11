@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import Input from "@/components/input/input";
+import Input from "@/components/shared/input/input";
 
 describe("Input", () => {
 

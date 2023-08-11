@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import Navbar from "../../../src/components/navbar/navbar";
+import Navbar from "@/components/shared/navbar/navbar";
 import "@testing-library/jest-dom";
 
 describe("Navbar", () => {

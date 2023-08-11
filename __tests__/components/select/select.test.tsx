@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import Select from "@/components/select/select";
+import Select from "@/components/shared/select/select";
 
 describe("Select", () => {
 
