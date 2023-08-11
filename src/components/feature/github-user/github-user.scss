@@ -1,0 +1,12 @@
+.github-user {
+  @apply tw-flex tw-items-center tw-gap-3;
+
+    &__avatar {
+        @apply tw-border tw-border-black tw-w-14 tw-h-14 tw-rounded-full;
+    }
+
+    &__profile {
+      @apply tw-text-blue-700;
+    }
+
+}
