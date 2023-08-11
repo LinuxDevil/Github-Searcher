@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "ci": "yarn lint && yarn test"
   },
   "dependencies": {
     "@types/lodash.throttle": "^4.1.7",
