@@ -1,22 +1,28 @@
-import { Component } from "react";
+import { Component, ErrorInfo, ReactNode } from "react";
 import Button from "@/components/shared/button/button";
 
-class ErrorBoundary extends Component {
-  constructor(props) {
+interface IErrorBoundaryProps {
+  children?: ReactNode;
+}
+
+interface IErrorBoundaryState {
+  hasError: boolean;
+}
+
+class ErrorBoundary extends Component<IErrorBoundaryProps, IErrorBoundaryState> {
+  constructor(props: IErrorBoundaryProps) {
     super(props)
 
     this.state = { hasError: false }
   }
-  static getDerivedStateFromError(error) {
+  static getDerivedStateFromError(error: Error): IErrorBoundaryState {
     return { hasError: true }
   }
-  componentDidCatch(error, errorInfo) {
+  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
     console.log({ error, errorInfo })
   }
   render() {
-    // Check if the error is thrown
     if (this.state.hasError) {
-      // You can render any custom fallback UI
       return (
         <div>
           <h2>Github Searcher caught an error! 😶 </h2>
@@ -27,7 +33,6 @@ class ErrorBoundary extends Component {
         </div>
       )
     }
-
 
     return this.props.children
   }
