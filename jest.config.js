@@ -12,6 +12,9 @@ const customJestConfig = {
         '^@/state(.*)$': '<rootDir>/src/state$1',
         '^@/hooks(.*)$': '<rootDir>/src/hooks$1',
         '^@/network(.*)$': '<rootDir>/src/network$1',
-    }
+    },
+    testPathIgnorePatterns: [
+      '/__helpers__/'
+    ]
 };
 module.exports = createJestConfig(customJestConfig);
