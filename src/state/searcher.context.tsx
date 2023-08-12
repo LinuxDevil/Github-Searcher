@@ -1,5 +1,5 @@
 import { GithubAPISearchType, IGithubRepository, IGithubUser } from "@/models/github-api";
-import { createContext, Dispatch, ReactNode, SetStateAction, useCallback, useState } from "react";
+import { createContext, Dispatch, ReactNode, SetStateAction, useState } from "react";
 
 const PAGE_SIZE: number = 10;
 
@@ -39,7 +39,6 @@ const SearcherContext = ({ children }: { children: ReactNode }) => {
     setPage((prevPage) => prevPage + 1);
     setResults( [...results, ...items]);
   };
-
 
   const setNewResults = (total: number, items: GithubAPIResultsType[]) => {
     setTotal(total);

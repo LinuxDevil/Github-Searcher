@@ -7,19 +7,19 @@ export default function GithubForks({ forksUrl }: { forksUrl: string }) {
 
   const [forks, setForks] = useState<IGithubRepository[]>([]);
 
-  const fetchGithubForkers = async () => {
+  const fetchGithubForks = async () => {
     await fetchGithubForkedRepositories(forksUrl, (data) => {
       setForks(data);
     });
   };
 
   useEffect(() => {
-    void fetchGithubForkers();
+    void fetchGithubForks();
   }, []);
 
   return (
     <div>
-      {forks.length > 0 && (<div className='github-repository__forks'>
+      {forks.length > 0 && (<div className="github-repository__forks">
         <span>Forks:</span>
         {forks.map(({ owner, node_id, id }, index) => (
           <Image key={`${id}${node_id}`} src={owner.avatar_url} alt={`Forker ${owner.id} logo`} width={32} height={32}
