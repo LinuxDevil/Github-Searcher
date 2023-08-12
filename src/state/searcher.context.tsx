@@ -2,12 +2,14 @@ import { GithubAPISearchType, IGithubRepository, IGithubUser } from "@/models/gi
 import { createContext, Dispatch, ReactNode, SetStateAction, useState } from "react";
 
 const PAGE_SIZE: number = 10;
+const DEFAULT_PAGE_NUMBER: number = 1;
 
 export type GithubAPIResultsType = IGithubUser & IGithubRepository;
 
 interface ISearcherState {
   query: string;
   page: number;
+  defaultPageNumber: number;
   pageSize: number;
   total: number;
   searchType: GithubAPISearchType;
@@ -26,7 +28,7 @@ const initialState: ISearcherState = {} as ISearcherState;
 export const SearcherContextData = createContext<ISearcherState>(initialState);
 
 const SearcherContext = ({ children }: { children: ReactNode }) => {
-  const [page, setPage] = useState<number>(0);
+  const [page, setPage] = useState<number>(1);
   const [total, setTotal] = useState<number>(0);
   const [query, setQuery] = useState<string>("");
   const [searchType, setSearchType] = useState<GithubAPISearchType>("users");
@@ -35,6 +37,7 @@ const SearcherContext = ({ children }: { children: ReactNode }) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const addNewResults = (total: number, items: GithubAPIResultsType[] = []) => {
+    if (!items) return;
     setTotal(total);
     setPage((prevPage) => prevPage + 1);
     setResults( [...results, ...items]);
@@ -48,8 +51,9 @@ const SearcherContext = ({ children }: { children: ReactNode }) => {
   };
 
   const contextValue: ISearcherState = {
-    page,
+    defaultPageNumber: DEFAULT_PAGE_NUMBER,
     pageSize: PAGE_SIZE,
+    page,
     total,
     query,
     searchType,

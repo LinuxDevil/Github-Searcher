@@ -18,13 +18,14 @@ export default function GithubSearch() {
     query,
     searchType,
     pageSize,
+    defaultPageNumber,
     setQuery,
     setSearchType,
     setIsLoading,
     setNewResults
   } = useContext(SearcherContextData);
 
-  const gitHubEndPoint = buildQuery(query, 0, pageSize, searchType);
+  const gitHubEndPoint = buildQuery(query, defaultPageNumber, pageSize, searchType);
   const { trigger } = useSWRMutation<IGithubAPIResponse>(gitHubEndPoint, apiFetcher);
 
   const onSearchInputChange = (event: ChangeEvent<HTMLInputElement>) => setQuery(event.target.value);
@@ -33,7 +34,6 @@ export default function GithubSearch() {
 
   const onSearchClicked = (event: MouseEvent<HTMLButtonElement> | FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    void searchData();
   };
 
   const searchData = async () => {
@@ -52,7 +52,7 @@ export default function GithubSearch() {
     <div className="github-search">
       <form className="github-search__container" onSubmit={onSearchClicked}>
         <Select defaultValue={"Choose a type"} options={SEARCH_OPTIONS} onChange={onSelectChange} />
-        <Input value={query} placeholder={"Search"} onChange={onSearchInputChange} />
+        <Input value={query} placeholder={"Search..."} onChange={onSearchInputChange} />
       </form>
     </div>
   );
