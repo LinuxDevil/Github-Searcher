@@ -2,7 +2,7 @@
   @apply tw-flex tw-flex-col tw-gap-1;
 
   &__description {
-    @apply tw-text-sm tw-text-gray-800 tw-break-words;
+    @apply tw-text-sm tw-text-gray-800 tw-break-words tw-truncate tw-text-ellipsis;
   }
 
   &__logo {
