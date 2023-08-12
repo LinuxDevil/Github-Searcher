@@ -1,3 +1,14 @@
 .search {
   @apply tw-px-12 tw-w-full tw-flex tw-flex-col tw-items-center tw-pt-16;
 }
+
+.error,
+.loading {
+  @apply tw-flex tw-flex-col tw-items-center tw-justify-center tw-text-center tw-pt-16;
+}
+
+.loading {
+  &__logo {
+    @apply tw-animate-spin;
+  }
+}
