@@ -1,4 +1,4 @@
-# GitHub Searcher ![github-searcher-actions-status](https://github.com/LinuxDevil/Github-Searcher/actions/workflows/github-actions-ci.yml/badge.svg)![Jest coverage](./badges/coverage-jest%20coverage.svg)
+# GitHub Searcher ![github-searcher-actions-status](https://github.com/LinuxDevil/Github-Searcher/actions/workflows/github-actions-ci.yml/badge.svg)  ![Jest coverage](./badges/coverage-jest%20coverage.svg)
 
 <p align="center">
   <img src="./public/images/logo.png" alt="GitHub Searcher">
