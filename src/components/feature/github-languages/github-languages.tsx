@@ -17,7 +17,7 @@ export default function GithubLanguages({ languageUrl }: {languageUrl: string}) 
   }, []);
 
   return (
-    <div className="github-repository__languages">
+    <div data-testid='github-repository__languages' className="github-repository__languages">
       {languages.map((language, index) => (
         <Badge key={index} text={language} />
       ))}
