@@ -8,7 +8,7 @@ import GithubForks from "@/components/feature/github-forks/github-forks";
 export default function GithubRepository({full_name, owner, description, languages_url, forks_url }: IGithubRepository) {
   return (
     <Card>
-      <div className="github-repository">
+      <div data-testid='github-repository' className="github-repository">
         <div className="github-repository__info">
           {owner && <Image src={owner.avatar_url} alt={`Repository ${full_name} logo`} width={32} height={32}
                   className="github-repository__logo" />}
