@@ -1,7 +1,5 @@
 import "@testing-library/jest-dom";
-import { queryAllByAltText, queryByAttribute, render, screen, waitFor } from "@testing-library/react";
-import { fetchGithubExtraData } from "@/app/search/searcher.service";
-import GithubLanguages from "@/components/feature/github-languages/github-languages";
+import { render, screen } from "@testing-library/react";
 import { IGithubUser } from "@/models/github-api";
 import GithubUser from "@/components/feature/github-user/github-user";
 
