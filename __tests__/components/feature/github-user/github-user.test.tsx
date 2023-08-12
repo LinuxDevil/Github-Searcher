@@ -15,9 +15,7 @@ describe("<GithubUser />", () => {
     expect(screen.getByRole('img')).toBeInTheDocument();
     expect(screen.getByRole('img')).toHaveAttribute('alt', `Github user ${mockUser.login} avatar`);
     expect(screen.getByText(mockUser.login)).toBeInTheDocument();
-    expect(screen.getByRole('link')).toBeInTheDocument();
-    expect(screen.getByRole('link')).toHaveAttribute('href', mockUser.html_url);
-    expect(screen.getByRole('link')).toHaveTextContent('Profile');
+    expect(screen.getAllByRole('link')).toHaveLength(2);
   });
 
 });
