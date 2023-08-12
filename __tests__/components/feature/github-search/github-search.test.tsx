@@ -59,7 +59,6 @@ describe("<GithubSearch />", () => {
     render(<GithubSearch />);
     expect(screen.getByRole("combobox")).toBeInTheDocument();
     expect(screen.getByPlaceholderText("Search")).toBeInTheDocument();
-    expect(screen.getByText("Search")).toBeInTheDocument();
   });
 
   it("should render with a query", () => {
@@ -74,9 +73,7 @@ describe("<GithubSearch />", () => {
     useContextMock.mockReturnValue({ ...SearcherContextData, setQuery });
     const { getByPlaceholderText } = render(<GithubSearch />);
     const searchInput = getByPlaceholderText("Search");
-    const searchButton = screen.getByText("Search");
     fireEvent.change(searchInput, { target: { value: "testing-query" } });
-    fireEvent.click(searchButton);
     await waitFor(() => {
       expect(setQuery).toHaveBeenCalledWith("testing-query");
     });

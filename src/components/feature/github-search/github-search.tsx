@@ -1,7 +1,6 @@
 import "./github-search.scss";
 import Input from "@/components/shared/input/input";
 import Select from "@/components/shared/select/select";
-import Button from "@/components/shared/button/button";
 import { MouseEvent, ChangeEvent, FormEvent, useContext } from "react";
 import { apiFetcher } from "@/network/api-fetcher";
 import { buildQuery, SEARCH_OPTIONS } from "@/app/search/searcher.service";
@@ -48,13 +47,13 @@ export default function GithubSearch() {
   };
 
   useDebounce(searchType, searchData);
+  useDebounce(query, searchData);
 
   return (
     <div className="github-search">
       <form className="github-search__container" onSubmit={onSearchClicked}>
         <Select defaultValue={"Choose a type"} options={SEARCH_OPTIONS} onChange={onSelectChange} />
         <Input value={query} placeholder={"Search"} onChange={onSearchInputChange} />
-        <Button text="Search" isDisabled={isLoading} onClick={onSearchClicked} />
       </form>
     </div>
   );
