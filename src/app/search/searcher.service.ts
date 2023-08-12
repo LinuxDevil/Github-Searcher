@@ -9,7 +9,7 @@ export const SEARCH_OPTIONS = [
 export const buildQuery = (query: string, page: number, pageSize: number, searchType: GithubAPISearchType) =>
   `https://api.github.com/search/${searchType}?q=${query}&page=${page}&per_page=${pageSize}`;
 
-export const fetchGithubExtraData = async (url: string, callback: (languages: string[]) => void) => {
+export const fetchGithubRepositoryLanguages = async (url: string, callback: (languages: string[]) => void) => {
   const response = await apiFetcher(url);
   callback(Object.keys(response) || []);
 }

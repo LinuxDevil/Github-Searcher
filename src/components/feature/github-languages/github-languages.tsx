@@ -1,13 +1,13 @@
 import Badge from "@/components/shared/badge/badge";
 import { useEffect, useState } from "react";
-import { fetchGithubExtraData } from "@/app/search/searcher.service";
+import { fetchGithubRepositoryLanguages } from "@/app/search/searcher.service";
 
 export default function GithubLanguages({ languageUrl }: {languageUrl: string}) {
 
   const [languages, setLanguages] = useState<string[]>([]);
 
   const fetchLanguages = async () => {
-    await fetchGithubExtraData(languageUrl, (data) => {
+    await fetchGithubRepositoryLanguages(languageUrl, (data) => {
         setLanguages(data);
     });
   }
