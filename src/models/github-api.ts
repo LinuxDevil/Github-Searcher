@@ -18,7 +18,6 @@ export interface IGithubRepository {
   node_id: string;
   full_name: string;
   description: string;
-  fork: boolean;
   forks_url: string;
   languages_url: string;
   owner: IGithubUser;
