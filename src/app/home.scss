@@ -8,4 +8,8 @@
     @apply tw-text-xl;
   }
 
+  &__search-link {
+    @apply tw-px-10 tw-py-2 tw-mt-3 tw-bg-gray-800 tw-rounded tw-text-white;
+  }
+
 }
