@@ -41,8 +41,8 @@ describe("<GithubRepository />", () => {
     expect(screen.getByRole('img')).toHaveAttribute('alt', 'Repository testing-full-name_1 logo');
     expect(screen.getByText('testing-full-name_1')).toBeInTheDocument();
     expect(screen.getByText('testing-description_1')).toBeInTheDocument();
-
-
+    expect(screen.getByTestId('github-repository__languages')).toBeInTheDocument();
+    expect(screen.getByTestId('github-repository__languages').textContent).toBe('');
   });
 
 });
