@@ -2,11 +2,11 @@ import './badge.scss';
 import { contrastTextColor, hexColorCalculation } from "@/util/util";
 import { useMemo } from "react";
 
-interface IBadge {
+interface IBadgeProps {
   text: string;
 }
 
-export default function Badge({text}: IBadge) {
+export default function Badge({text}: IBadgeProps) {
 
   const hex = useMemo(() => hexColorCalculation(text), [text]);
   const textColor = useMemo(() => contrastTextColor(hex), [hex]);

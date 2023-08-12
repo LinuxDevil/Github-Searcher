@@ -7,6 +7,7 @@
 
   &__tab {
     @apply tw-flex tw-flex-row tw-items-center tw-gap-2 tw-text-gray-500 tw-text-sm tw-font-medium tw-cursor-pointer;
+
     &--active {
       @apply tw-text-black tw-font-bold;
     }

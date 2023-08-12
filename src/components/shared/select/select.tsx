@@ -1,9 +1,10 @@
 import "./select.scss";
+import { ChangeEvent } from "react";
 
-interface ISelect {
+interface ISelectProps {
   defaultValue: string;
   options: SelectOptionType[];
-  onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+  onChange: (event: ChangeEvent<HTMLSelectElement>) => void;
 }
 
 type SelectOptionType = {
@@ -11,7 +12,7 @@ type SelectOptionType = {
   value: string;
 }
 
-export default function Select({ options = [], defaultValue, onChange }: ISelect) {
+export default function Select({ defaultValue, options = [], onChange }: ISelectProps) {
   return (
     <select className="select" defaultValue={defaultValue} onChange={onChange}>
       {options.map(({label, value}, index) =>

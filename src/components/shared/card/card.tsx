@@ -1,7 +1,11 @@
 import "./card.scss";
 import { ReactNode } from "react";
 
-export default function Card({ children }: { children: ReactNode }) {
+interface ICardProps {
+  children: ReactNode;
+}
+
+export default function Card({ children }: ICardProps) {
   return (
     <div className="card">
       {children}

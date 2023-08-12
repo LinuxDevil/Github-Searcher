@@ -1,15 +1,15 @@
-import React from "react";
-import './input.scss';
+import { ChangeEvent, HTMLInputTypeAttribute } from "react";
+import "./input.scss";
 
-interface IInput {
+interface IInputProps {
   value: string;
   placeholder?: string;
-  type?: React.HTMLInputTypeAttribute;
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  inputType?: HTMLInputTypeAttribute;
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
-export default function Input({value, placeholder='Enter something...', type='text', onChange}: IInput) {
+export default function Input({ value, placeholder = "Enter something...", inputType = "text", onChange }: IInputProps) {
   return (
-    <input className='input' type={type} value={value} placeholder={placeholder} onChange={onChange} />
+    <input className="input" type={inputType} value={value} placeholder={placeholder} onChange={onChange} />
   );
 }
