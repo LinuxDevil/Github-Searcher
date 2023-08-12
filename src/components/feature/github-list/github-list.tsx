@@ -1,5 +1,5 @@
 import "./github-list.scss";
-import { useContext, useMemo, useRef, useState } from "react";
+import { useContext, useMemo, useRef } from "react";
 import { GithubAPIResultsType, SearcherContextData } from "@/state/searcher.context";
 import GithubUser from "@/components/feature/github-user/github-user";
 import { buildQuery } from "@/app/search/searcher.service";
@@ -19,9 +19,9 @@ export default function GithubList() {
     pageSize,
     total,
     results,
+    displayedResultType,
     isLoading,
     setIsLoading,
-    displayedResultType,
     addNewResults,
   } = useContext(SearcherContextData);
 
@@ -54,9 +54,9 @@ export default function GithubList() {
   };
 
   return (
-    <div className="github-list" ref={listRef} onScroll={onScroll}>
+    <div data-testid='github-list' className="github-list" ref={listRef} onScroll={onScroll}>
       {results.length === 0 && !isLoading &&
-        <div className="github-list__empty">
+        <div data-testid='github-list__empty' className="github-list__empty">
           <Image src={"/images/no-results__logo.png"} alt={"No results logo"} width={128} height={128} />
           <div className="github-list__empty-text">{noResults}</div>
         </div>}
