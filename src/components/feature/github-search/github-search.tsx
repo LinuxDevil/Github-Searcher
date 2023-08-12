@@ -19,6 +19,7 @@ export default function GithubSearch() {
     query,
     searchType,
     pageSize,
+    isLoading,
     setQuery,
     setSearchType,
     setIsLoading,
@@ -53,7 +54,7 @@ export default function GithubSearch() {
       <form className="github-search__container" onSubmit={onSearchClicked}>
         <Select defaultValue={"Choose a type"} options={SEARCH_OPTIONS} onChange={onSelectChange} />
         <Input value={query} placeholder={"Search"} onChange={onSearchInputChange} />
-        <Button text="Search" onClick={onSearchClicked} />
+        <Button text="Search" isDisabled={isLoading} onClick={onSearchClicked} />
       </form>
     </div>
   );
