@@ -1,0 +1,6 @@
+.searcher-error {
+  @apply tw-flex tw-flex-col tw-justify-center tw-items-center tw-w-[100vw] tw-h-[100vh] tw-pt-40;
+  &__message {
+    @apply tw-text-xl tw-text-center tw-text-red-500;
+  }
+}

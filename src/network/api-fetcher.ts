@@ -1,10 +1,14 @@
 const headerOptions = {
   headers: {
-    Authorization: `token ${process.env.API_TOKEN}`,
+    Authorization: `token ${process.env.API_TOKEN}`
   },
   next: {
-    revalidate: 15,
-  },
-}
+    revalidate: 15
+  }
+};
 
-export const apiFetcher = (url: string) => fetch(url, headerOptions).then(res => res.json());
+export const apiFetcher = (url: string) => fetch(url, headerOptions)
+  .then(res => res.json())
+  .catch(err => {
+    throw new Error(err);
+  });
