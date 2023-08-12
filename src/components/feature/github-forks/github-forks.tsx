@@ -22,8 +22,11 @@ export default function GithubForks({ forksUrl }: { forksUrl: string }) {
       {forks.length > 0 && (<div className="github-repository__forks">
         <span>Forks:</span>
         {forks.map(({ owner, node_id, id }, index) => (
-          <Image key={`${id}${node_id}`} src={owner.avatar_url} alt={`Forker ${owner.id} logo`} width={32} height={32}
-                 className="github-repository__forks-avatar" />
+          <div key={`${id}${node_id}`} className='github-repository__forkers'>
+            <Image src={owner.avatar_url} alt={`Forker ${owner.id} logo`} width={32} height={32}
+                   className="github-repository__forks-avatar" />
+            <span>{owner.login}</span>
+          </div>
         ))}
       </div>)}
     </div>
