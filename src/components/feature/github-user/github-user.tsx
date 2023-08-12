@@ -13,7 +13,8 @@ export default function GithubUser({ login, html_url, avatar_url }: IGithubUser)
                height={64} />
         <div className="github-user__info">
           <div className="github-user__login">{login}</div>
-          <Link className="github-user__profile" target="_blank" href={html_url}>Profile</Link>
+          <Link className="github-user__profile" target="_blank" href={html_url}>GitHub</Link>
+          <Link className="github-user__profile" href={`/user/${login}`}>Details</Link>
         </div>
       </div>
     </Card>

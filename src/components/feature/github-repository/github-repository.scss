@@ -9,7 +9,7 @@
     @apply tw-border tw-rounded;
   }
 
-  &__info, &__forks {
+  &__info, &__forks, &__forkers {
     @apply tw-flex tw-gap-1;
   }
 
