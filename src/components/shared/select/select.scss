@@ -1,6 +1,5 @@
 .select {
-  @apply tw-border-2 tw-rounded tw-outline-none tw-h-10;
-
+  @apply tw-border-2 tw-rounded tw-px-2 tw-outline-none tw-h-10 tw-w-[10vw];
   &:focus {
     @apply tw-ring tw-ring-slate-400;
   }
