@@ -1,10 +1,9 @@
 import { GithubAPISearchType, IGithubRepository, IGithubUser } from "@/models/github-api";
 import { createContext, Dispatch, ReactNode, SetStateAction, useCallback, useState } from "react";
-import { XOR } from "@/util/types";
 
 const PAGE_SIZE: number = 10;
 
-export type GithubAPIResultsType = XOR<IGithubUser, IGithubRepository>;
+export type GithubAPIResultsType = IGithubUser & IGithubRepository;
 
 interface ISearcherState {
   query: string;

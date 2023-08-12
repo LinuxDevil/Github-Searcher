@@ -1,8 +1,10 @@
+import { GithubAPIResultsType } from "@/state/searcher.context";
+
 export type GithubAPISearchType = 'repositories' | 'users';
 
 export interface IGithubAPIResponse {
   total_count: number;
-  items: IGithubRepository[] | IGithubUser[];
+  items: GithubAPIResultsType[];
 }
 
 export interface IGithubUser {
