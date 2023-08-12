@@ -5,6 +5,10 @@ const createJestConfig = nextJest({
 const customJestConfig = {
     moduleDirectories: ['node_modules', '<rootDir>/src'],
     testEnvironment: 'jest-environment-jsdom',
-    coverageReporters: ["json-summary"]
+    moduleNameMapper: {
+        '^@/app(.*)$': '<rootDir>/src/app$1',
+        '^@/components(.*)$': '<rootDir>/src/components$1',
+        '^@/utils(.*)$': '<rootDir>/src/utils$1',
+    }
 };
 module.exports = createJestConfig(customJestConfig);
