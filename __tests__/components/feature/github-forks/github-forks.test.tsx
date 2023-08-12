@@ -3,7 +3,8 @@ import { fetchGithubForkedRepositories } from "@/app/search/searcher.service";
 import { render, screen, waitFor } from "@testing-library/react";
 import GithubForks from "@/components/feature/github-forks/github-forks";
 import { IGithubRepository } from "@/models/github-api";
-import { fetchGithubForkedRepositoriesMockWithParams, generateMockRepositories } from "../../../test-helper";
+import { generateMockRepositories } from "../../../__helpers__/generators";
+import { fetchGithubForkedRepositoriesMock } from "../../../__helpers__/mock-functions";
 
 jest.mock("@/app/search/searcher.service");
 
@@ -14,7 +15,7 @@ describe("<GithubForks />", () => {
   });
 
   it("should not render without any forks", async () => {
-    (fetchGithubForkedRepositories as jest.Mock).mockImplementation(fetchGithubForkedRepositoriesMockWithParams([]));
+    (fetchGithubForkedRepositories as jest.Mock).mockImplementation(fetchGithubForkedRepositoriesMock([]));
 
     render(<GithubForks forksUrl={"testing-github-forks"} />);
 
@@ -25,7 +26,7 @@ describe("<GithubForks />", () => {
 
   it("should render with forks", async () => {
     const mockForks: IGithubRepository[] = generateMockRepositories(2);
-    (fetchGithubForkedRepositories as jest.Mock).mockImplementation(fetchGithubForkedRepositoriesMockWithParams(mockForks));
+    (fetchGithubForkedRepositories as jest.Mock).mockImplementation(fetchGithubForkedRepositoriesMock(mockForks));
 
     render(<GithubForks forksUrl="testing-github-forks" />);
 

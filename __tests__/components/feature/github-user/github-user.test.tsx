@@ -2,17 +2,12 @@ import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import { IGithubUser } from "@/models/github-api";
 import GithubUser from "@/components/feature/github-user/github-user";
+import { generateMockUsers } from "../../../__helpers__/generators";
 
 describe("<GithubUser />", () => {
 
   it ('should render', () => {
-    const mockUser: IGithubUser = {
-      login: 'testing-login',
-      html_url: 'testing-html-url',
-      avatar_url: 'http://testing-avatar-url',
-      id: 1,
-      node_id: 'testing-node-id',
-    }
+    const mockUser: IGithubUser = generateMockUsers(1)[0];
 
     render(<GithubUser {...mockUser} />);
 

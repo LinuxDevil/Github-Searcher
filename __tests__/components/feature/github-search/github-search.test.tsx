@@ -13,6 +13,7 @@ jest.mock("@/app/search/searcher.service", () => ({
   ],
   buildQuery: jest.fn((query: string, searchType: string, pageSize: number) => ({ query, searchType, pageSize })),
 }));
+
 jest.mock("@/state/searcher.context", () => ({
   SearcherContextData: {
     query: "",
@@ -79,7 +80,6 @@ describe("<GithubSearch />", () => {
     await waitFor(() => {
       expect(setQuery).toHaveBeenCalledWith("testing-query");
     });
-
   });
 
   it("should change the search type when the select is changed", async () => {
@@ -95,7 +95,6 @@ describe("<GithubSearch />", () => {
       expect(setSearchType).toHaveBeenCalledWith("repositories");
       expect(buildQuery).toHaveBeenCalledWith("", 0, 10, "repositories");
     });
-
   });
 
 });

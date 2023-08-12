@@ -1,8 +1,8 @@
 import "@testing-library/jest-dom";
 import { render, screen, waitFor } from "@testing-library/react";
-import { fetchGithubExtraData } from "@/app/search/searcher.service";
+import { fetchGithubRepositoryLanguages } from "@/app/search/searcher.service";
 import GithubLanguages from "@/components/feature/github-languages/github-languages";
-import { fetchGithubLanguagesData } from "../../../test-helper";
+import { fetchGithubRepositoryLanguagesMock } from "../../../__helpers__/mock-functions";
 
 jest.mock('@/app/search/searcher.service');
 
@@ -13,7 +13,7 @@ describe('<GithubLanguages />', () => {
   });
 
   it('should not render when there is no languages', async () => {
-    (fetchGithubExtraData as jest.Mock).mockImplementation(fetchGithubLanguagesData([]));
+    (fetchGithubRepositoryLanguages as jest.Mock).mockImplementation(fetchGithubRepositoryLanguagesMock([]));
 
     render(<GithubLanguages languageUrl={'testing-github-languages'} />);
 
@@ -23,7 +23,7 @@ describe('<GithubLanguages />', () => {
   });
 
   it('should render with languages', async () => {
-    (fetchGithubExtraData as jest.Mock).mockImplementation(fetchGithubLanguagesData(['testing-language_1', 'testing-language_2']));
+    (fetchGithubRepositoryLanguages as jest.Mock).mockImplementation(fetchGithubRepositoryLanguagesMock(['testing-language_1', 'testing-language_2']));
 
     render(<GithubLanguages languageUrl={'testing-github-languages'} />);
 
