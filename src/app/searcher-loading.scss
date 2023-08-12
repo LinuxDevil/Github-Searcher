@@ -1,0 +1,10 @@
+
+.searcher-loading {
+  @apply tw-flex tw-flex-col tw-items-center tw-justify-center tw-text-center tw-pt-16 tw-w-[100vw] tw-h-[100vh] ;
+}
+
+.searcher-loading {
+  &__logo {
+    @apply tw-animate-spin;
+  }
+}

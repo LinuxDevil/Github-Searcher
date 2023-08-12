@@ -1,4 +1,6 @@
 import './globals.css'
+import './searcher-loading.scss';
+import './searcher-error.scss';
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Navbar from "@/components/shared/navbar/navbar";
