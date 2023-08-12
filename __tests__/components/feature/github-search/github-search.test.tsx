@@ -19,6 +19,7 @@ jest.mock("@/state/searcher.context", () => ({
     query: "",
     searchType: "repositories",
     pageSize: 10,
+    defaultPageNumber: 1,
     setQuery: jest.fn((query: string) => query),
     setSearchType: jest.fn((searchType: string) => searchType),
     setIsLoading: jest.fn((isLoading: boolean) => isLoading),
@@ -58,21 +59,21 @@ describe("<GithubSearch />", () => {
     useContextMock.mockReturnValue(SearcherContextData);
     render(<GithubSearch />);
     expect(screen.getByRole("combobox")).toBeInTheDocument();
-    expect(screen.getByPlaceholderText("Search")).toBeInTheDocument();
+    expect(screen.getByPlaceholderText("Search...")).toBeInTheDocument();
   });
 
   it("should render with a query", () => {
     useContextMock.mockReturnValue({ ...SearcherContextData, query: "testing-query" });
     const { getByPlaceholderText } = render(<GithubSearch />);
-    expect(getByPlaceholderText("Search")).toBeInTheDocument();
-    expect(getByPlaceholderText("Search")).toHaveValue("testing-query");
+    expect(getByPlaceholderText("Search...")).toBeInTheDocument();
+    expect(getByPlaceholderText("Search...")).toHaveValue("testing-query");
   });
 
   it("should search when the search button is clicked", async () => {
     const setQuery = jest.fn((query) => ({ query }));
     useContextMock.mockReturnValue({ ...SearcherContextData, setQuery });
     const { getByPlaceholderText } = render(<GithubSearch />);
-    const searchInput = getByPlaceholderText("Search");
+    const searchInput = getByPlaceholderText("Search...");
     fireEvent.change(searchInput, { target: { value: "testing-query" } });
     await waitFor(() => {
       expect(setQuery).toHaveBeenCalledWith("testing-query");
@@ -90,7 +91,7 @@ describe("<GithubSearch />", () => {
       expect(useDebounce).toHaveBeenCalled();
       expect(select).toHaveValue("repositories");
       expect(setSearchType).toHaveBeenCalledWith("repositories");
-      expect(buildQuery).toHaveBeenCalledWith("", 0, 10, "repositories");
+      expect(buildQuery).toHaveBeenCalledWith("", 1, 10, "repositories");
     });
   });
 
