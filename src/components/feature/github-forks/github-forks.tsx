@@ -10,7 +10,6 @@ export default function GithubForks({ forksUrl }: { forksUrl: string }) {
   const fetchGithubForkers = async () => {
     await fetchGithubForkedRepositories(forksUrl, (data) => {
       setForks(data);
-      console.log(data);
     });
   };
 
