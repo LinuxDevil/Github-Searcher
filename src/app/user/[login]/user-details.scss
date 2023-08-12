@@ -1,0 +1,48 @@
+.user-details {
+  @apply tw-px-12 tw-w-1/2 tw-m-auto tw-mt-6 tw-flex tw-flex-col tw-items-center tw-pt-6 tw-border tw-shadow;
+
+  &__info {
+    @apply tw-flex tw-gap-4 tw-items-center tw-w-full tw-justify-center tw-p-2;
+  }
+
+  &__link {
+    @apply tw-text-black tw-font-bold tw-text-lg;
+  }
+
+  &__section {
+    @apply tw-flex tw-flex-col tw-gap-4 tw-items-center tw-w-full tw-justify-center tw-p-2;
+  }
+
+  &__section-title {
+    @apply tw-text-2xl tw-font-bold;
+  }
+
+  &__avatar {
+    @apply tw-rounded-full;
+  }
+
+  &__repositories, &__followers {
+    @apply tw-w-full tw-p-1 tw-flex tw-flex-wrap;
+  }
+
+  &__repository {
+    @apply tw-w-1/2 tw-flex tw-flex-col tw-gap-2 tw-border tw-rounded tw-p-2 tw-text-sm;
+    &__name {
+      @apply tw-font-bold tw-text-lg tw-text-center;
+    }
+
+    &__description {
+      @apply tw-text-center tw-text-gray-800 tw-break-words tw-truncate tw-text-ellipsis;
+    }
+
+    &__topics {
+      @apply tw-flex tw-flex-wrap tw-gap-1;
+    }
+  }
+
+
+  &__follower {
+    @apply tw-border tw-p-2 tw-rounded tw-flex tw-justify-center tw-items-center tw-gap-2;
+  }
+
+}

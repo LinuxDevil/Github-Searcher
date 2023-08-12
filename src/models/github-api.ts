@@ -20,8 +20,10 @@ export interface IGithubRepository {
   node_id: string;
   full_name: string;
   description: string;
+  url: string;
   forks_url: string;
   languages_url: string;
+  topics: string[];
   owner: IGithubUser;
 }
 
