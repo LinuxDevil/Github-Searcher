@@ -9,6 +9,9 @@ const customJestConfig = {
         '^@/app(.*)$': '<rootDir>/src/app$1',
         '^@/components(.*)$': '<rootDir>/src/components$1',
         '^@/utils(.*)$': '<rootDir>/src/utils$1',
+        '^@/state(.*)$': '<rootDir>/src/state$1',
+        '^@/hooks(.*)$': '<rootDir>/src/hooks$1',
+        '^@/network(.*)$': '<rootDir>/src/network$1',
     }
 };
 module.exports = createJestConfig(customJestConfig);
