@@ -5,7 +5,7 @@ export const UserRepositories = ({ repositories }: { repositories: IGithubReposi
   <div className="user-details__repositories">
     {repositories.map((repo) => <UserRepository key={`${repo.id}${repo.node_id}`} fullName={repo.full_name}
                                                 description={repo.description} topics={repo.topics || []}
-                                                repoLink={repo.url} />
+                                                repoLink={repo.html_url} />
     )}
   </div>
 );

@@ -20,7 +20,7 @@ export interface IGithubRepository {
   node_id: string;
   full_name: string;
   description: string;
-  url: string;
+  html_url: string;
   forks_url: string;
   languages_url: string;
   topics: string[];
