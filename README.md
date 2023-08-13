@@ -20,7 +20,8 @@ A GitHub Searcher app for searching repositories and users, built with:
   - [Mind Map 🗺️](#mind-map-)
   - [Figma Design 🎨](#figma-design-)
   - [Documentation 📜](#documentation-)
-  - [Features 🚀](#features)
+  - [Features 🚀](#features-)
+  - [Routes 🛣️](#routes--)
   - [Running The Project 👨🏻‍💻](#running-the-project)
   - [Running Tests 🪲](#running-tests)
   - [Docker Image 🐳](#docker-image)
@@ -60,6 +61,11 @@ A GitHub Searcher app for searching repositories and users, built with:
     - [x]  Any other additional information, you'd like to show.
 -  [x] Handle the empty/error/loading states.
 -  [x] Pagination: add the infinite scroll pagination.
+
+## Routes 🛣️ 
+- `'/'` - Home page [(Localhost Example)](http://localhost:3000/)
+- `'/search'` - Search page for searching repositories and users [(Localhost Example)](http://localhost:3000/search)
+- `'/user/:login'` - User page for showing the user details [(Localhost Example)](http://localhost:3000/user/LinuxDevil)
 
 ## Running The Project 👨🏻‍💻
 To run the Github Searcher project follow these steps:
